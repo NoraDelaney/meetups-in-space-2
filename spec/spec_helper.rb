@@ -1,10 +1,12 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'pry'
 require 'rspec'
 require 'capybara/rspec'
 
 require_relative '../app.rb'
 
-set :environment, :test
+# set :environment, :test <-- This is not necessary with ENV['RACK_ENV'] = 'test' above
 
 Capybara.app = Sinatra::Application
 
